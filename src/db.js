@@ -4,6 +4,7 @@ const db = mongoose.connection;
 const uri = "mongodb://localhost:27017/testDonis";
 
 mongoose.connect(uri,{
+    useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
