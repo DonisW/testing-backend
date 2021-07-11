@@ -14,6 +14,8 @@ app.use(express.json());
 app.use("/api/", require("./router/index"));
 app.use("/api/addproduct", require("./router/addProduct"));
 app.use("/api/products", require("./router/products"));
+app.use("/api/deleteproduct/:productId", require("./router/deleteProduct"));
+//app.use("/api/updateproduct/:productId", require("./router/updateProduct"));
 
 //Server Listening
 app.listen(app.get("port"), () =>{
