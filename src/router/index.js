@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-router.get("", (req, res) =>{
+router.get("/api", (req, res) =>{
     res.send("<H1>Inicio<H1>");
 });
 

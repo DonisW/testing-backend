@@ -11,11 +11,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //Router
-app.use("/api/", require("./router/index"));
-app.use("/api/addproduct", require("./router/addProduct"));
-app.use("/api/products", require("./router/products"));
-app.use("/api/deleteproduct/:productId", require("./router/deleteProduct"));
-//app.use("/api/updateproduct/:productId", require("./router/updateProduct"));
+app.use(require("./router/index"));
+app.use(require("./router/Product"));
 
 //Server Listening
 app.listen(app.get("port"), () =>{
