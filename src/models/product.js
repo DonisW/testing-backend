@@ -6,7 +6,7 @@ const productSchema = new Schema ({
     model:{type: String, required: true},
     status:{type:Boolean, required: true, default: true},
     date:{type: Date, default: Date.now}
-})
+});
 
 module.exports = model("Product", productSchema);
 
