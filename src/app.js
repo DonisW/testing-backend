@@ -13,6 +13,8 @@ app.use(express.json());
 //Router
 app.use(require("./router/index"));
 app.use(require("./router/Product"));
+app.use(require("./router/pedidos"));
+app.use(require("./router/category"));
 
 //Server Listening
 app.listen(app.get("port"), () =>{
