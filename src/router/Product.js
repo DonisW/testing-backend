@@ -34,7 +34,7 @@ router.post("/products/addProducts",
     .isMongoId().withMessage("Id de la categoria"),
 
     body("name", "Nombre del producto?")
-        .isLength({min:4}).withMessage("minimo 4 caracteres para el nombre del producto"),
+        .isLength({min:2}).withMessage("minimo 2 caracteres para el nombre del producto"),
 
     body("description", "Falto la descripcion del producto")
         .not()
@@ -43,7 +43,11 @@ router.post("/products/addProducts",
     body("model", "Marca o modelo del producto?")
         .not()
         .isEmpty()
-        .isLength({min:4}).withMessage("minimo 4 caracteres"),
+        .isLength({min:2}).withMessage("minimo 4 caracteres"),
+    
+    body("stock", "productos disponibles?")
+        .not()
+        .isEmpty(),
     
     body("price", "Precio del producto?")
         .not()
@@ -79,7 +83,7 @@ router.put("/products/updateProducts/:id", [
     body("name", "Nombre del producto?")
         .not()
         .isEmpty()
-        .isLength({min:4}).withMessage("minimo 4 caracteres para el nombre del producto"),
+        .isLength({min:2}).withMessage("minimo 4 caracteres para el nombre del producto"),
 
     body("description", "Falto la descripcion del producto")
         .not()
@@ -88,7 +92,15 @@ router.put("/products/updateProducts/:id", [
     body("model", "Marca o modelo del producto?")
         .not()
         .isEmpty()
-        .isLength({min:4}).withMessage("minimo 4 caracteres")
+        .isLength({min:2}).withMessage("minimo 4 caracteres"),
+       
+    body("stock", "productos disponibles?")
+        .not()
+        .isEmpty(),
+
+    body("price", "Precio del producto?")
+        .not()
+        .isEmpty()
 
 ], async (req, res) =>{
 

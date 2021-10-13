@@ -1,5 +1,4 @@
 const {Schema, model} = require("mongoose");
-const products = require("./product")
 
 const categorySchema = new Schema ({
      category:{type: String, required: true},

@@ -3,7 +3,7 @@ const products = require("./product")
 
 
 const orderSchema = new Schema ({
-    orderType:{type: String, required: true},
+    orderType:[{ type: Schema.Types.ObjectId, ref: "orderType", required: true}],
     product:[{ type: Schema.Types.ObjectId, ref: "products", required: true}],
     paymentMethod:{type: String, required: true},
     amount:{type: Number, default: 0, required: true},

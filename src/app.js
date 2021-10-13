@@ -15,6 +15,7 @@ app.use(require("./router/index"));
 app.use(require("./router/Product"));
 app.use(require("./router/pedidos"));
 app.use(require("./router/category"));
+app.use(require("./router/orderType"));
 
 //Server Listening
 app.listen(app.get("port"), () =>{
